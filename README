@@ -1,0 +1,60 @@
+== EKSIPROXY ==
+
+DEMO
+
+ - https://eksi.rojen.uk
+ - https://eksiseyler.rojen.uk
+ - https://cdneksi.rojen.uk, https://seylerekstat.rojen.uk, https://imgekstat.rojen.uk, https://ekstat.rojen.uk
+
+KURULUM ADINLARI
+
+ - etc/env.sh dosyasi icinde DOMAIN ve PROXY_BIND degerlerini kendine gore ayarla.
+
+ - SSL anahtarlarini olustur:
+  $ sudo make ssl
+
+ - PP programini indir:
+  $ sudo make /usr/local/bin/pp
+
+ - NGINX ayarlarini yarat:
+  $ make generate
+
+ - Ayarlarini sistemine indir (NGINX_DIR adresine indirilecek):
+  $ sudo make install
+
+ - /etc/nginx/nginx.conf dosyasina vekil sunucu dizinini tanitacak satirlari ekle,
+   <DOMAIN> etc/env.sh'de bulunan cevre degiskeniyle ayni olmali:
+        include /etc/nginx/<DOMAIN>/main.conf;
+        include /etc/nginx/<DOMAIN>/service.conf;
+        include /etc/nginx/<DOMAIN>/http.conf;
+
+ - NGINX yapilandirmasini kontrol et ve nginx servisini yeniden baslat:
+  $ sudo nginx -t && sudo systemctl restart nginx.service
+
+ - Yerel kullanima icin vekil sunucularina ozel /etc/hosts dosyasi olustur (istege bagli):
+   uretilen ciktiyi /etc/hosts icerisine yapistir.
+  $ make hosts
+ 
+
+OZEL AYARLAR
+
+  Bu kurulumda YouTube, TikTok, Twitter gibi seytani servisler ozgur on uc alternatifleri ile degistirildi.
+  Ekleme yapmak veya devre disi birakmak icin etc/libre.txt dosyasini duzenle
+
+  Bu kurulum Google Reklamlar gibi seytani reklam servisleri devre disi birakildi.
+  Ekleme yapmak veya devre disi birakmak icin etc/blacklist.txt dosyasini duzenle.
+
+BASKA SITELERIN VEKIL SUNUCUSUNU OLUSTURMAK ICIN
+
+  - Bunun icin sadece etc/env.sh, etc/config.conf dosyalarina dokunmak yeterli.
+  - etc/config.conf dosyasi icin kullanim semasi:
+	HEDEF SUNUCU            VEKIL SUNUCU           SERVIS TIPI  frame-ancestors
+
+	cdn.eksisozluk1923.com  cdneksi.${DOMAIN}	service
+	eksisozluk1923.com      eksi.${DOMAIN}          main
+	seyler.ekstat.com       seylerekstat.${DOMAIN}  service
+	img.ekstat.com          imgekstat.${DOMAIN}     service
+	ekstat.com              ekstat.${DOMAIN}        service
+	eksiseyler.com          eksiseyler.${DOMAIN}    main         eksi.${DOMAIN}
+  - service tipini statik sunucular icin kullanmak yeterli,
+    main tipini ise dinamik ve buyuk siteler icin kullanabilirsin.
