@@ -4,6 +4,7 @@ hostnativespot.com
 app.networkad.net
 app.gelirartisi.com
 nativespot.com
+ad.doubleclick.net
 googleads.g.doubleclick.net
 delivery.adrecover.com
 cdn.adpushup.com
@@ -11,3 +12,9 @@ cloudfront.net
 googletagmanager.com
 static.criteo.net
 securepubads.g.doubleclick.net
+doubleclick.net
+scorecardresearch.com
+googletagservices.com
+adservice.google.com
+googlesyndication.com
+connect.facebook.net
