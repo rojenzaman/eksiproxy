@@ -16,7 +16,7 @@ clean-all: clean
 	rm -rf lib/objs
 
 format-pp:
-	nginxbeautifier src/loop/*.pp src/settings/*.pp
+	nginxbeautifier src/loop/*.uppconf src/settings/*.uppconf
 
 format-sh:
 	beautysh --tab lib/*.sh bin/*.sh
