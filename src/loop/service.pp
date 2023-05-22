@@ -10,7 +10,7 @@ server {
 		proxy_pass https://$TARGET;
 	}
 	#!
-	if test $ROBOTS == disallow; then
+	if [[ "$ROBOTS" == disallow ]]; then
 	#!
 
 	location = /robots.txt {

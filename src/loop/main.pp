@@ -10,7 +10,7 @@ server {
 		proxy_pass https://$TARGET;
 		include $NGINX_DIR/post-proxy.conf;
 		#!
-		if ! test -z $FRAME; then
+		if ! [[ -z "$FRAME" ]]; then
 		#!
 
 		add_header X-Frame-Options \"ALLOW-FROM $FRAME\";
@@ -22,7 +22,7 @@ server {
 		include $NGINX_DIR/filter.conf;
 	}
 	#!
-	if test $ROBOTS == disallow; then
+	if [[ "$ROBOTS" == disallow ]]; then
 	#!
 
 	location = /robots.txt {
