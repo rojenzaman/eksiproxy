@@ -21,5 +21,16 @@ server {
 		#!
 		include $NGINX_DIR/filter.conf;
 	}
+	#!
+	if test $ROBOTS == disallow; then
+	#!
+
+	location = /robots.txt {
+		add_header Content-Type text/plain;
+		return 200 \"User-agent: *\nDisallow: /\n\";
+	}
+	#!
+	fi
+	#!
 }
 

@@ -77,14 +77,14 @@ Bunun için **etc/env.sh**, **etc/config.conf** dosyalarına dokunman yeterli.
 **etc/config.conf** dosyası için kullanım şeması:
 
 ```
-HEDEF SUNUCU            PROXY                   SERVİS TİPİ  frame-ancestors
+HEDEF SUNUCU            PROXY                   SERVİS TİPİ  ROBOTS    frame-ancestors
 
-cdn.eksisozluk1923.com  cdneksi.${DOMAIN}       service
-eksisozluk1923.com      eksi.${DOMAIN}          main
-seyler.ekstat.com       seylerekstat.${DOMAIN}  service
-img.ekstat.com          imgekstat.${DOMAIN}     service
-ekstat.com              ekstat.${DOMAIN}        service
-eksiseyler.com          eksiseyler.${DOMAIN}    main         eksi.${DOMAIN}
+cdn.eksisozluk1923.com  cdneksi.${DOMAIN}       service      disallow
+eksisozluk1923.com      eksi.${DOMAIN}          main         disallow
+seyler.ekstat.com       seylerekstat.${DOMAIN}  service      disallow
+img.ekstat.com          imgekstat.${DOMAIN}     service      disallow
+ekstat.com              ekstat.${DOMAIN}        service      disallow
+eksiseyler.com          eksiseyler.${DOMAIN}    main         disallow  eksi.${DOMAIN}
 ```
 
 `service` tipini statik servisler için kullanabilir, `main` tipini ise dinamik servisler için kullanabilirsin.

@@ -9,5 +9,16 @@ server {
 		include $NGINX_DIR/pre-proxy.conf;
 		proxy_pass https://$TARGET;
 	}
+	#!
+	if test $ROBOTS == disallow; then
+	#!
+
+	location = /robots.txt {
+		add_header Content-Type text/plain;
+		return 200 \"User-agent: *\nDisallow: /\n\";
+	}
+	#!
+	fi
+	#!
 }
 

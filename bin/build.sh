@@ -7,6 +7,7 @@ pp etc/config.conf > etc/tmp/rules.txt
 while IFS= read -r line; do
 	export PROXY=$(echo ${line} | awk '{print $2}')
 	export TARGET=$(echo ${line} | awk '{print $1}')
+	export ROBOTS=$(echo ${line} | awk '{print $4}')
 	FORMAT=$(echo ${line} | awk '{print $3}')
 	if [[ ${FORMAT} == "service" ]]; then
 		pp src/loop/service.pp >> output/service.conf
@@ -16,7 +17,8 @@ done < etc/tmp/rules.txt && echo "src/loop/service.pp >> output/service.conf"
 while IFS= read -r line; do
 	export PROXY=$(echo ${line} | awk '{print $2}')
 	export TARGET=$(echo ${line} | awk '{print $1}')
-	export FRAME=$(echo ${line} | awk '{print $4}')
+	export ROBOTS=$(echo ${line} | awk '{print $4}')
+	export FRAME=$(echo ${line} | awk '{print $5}')
 	FORMAT=$(echo ${line} | awk '{print $3}')
 	if [[ ${FORMAT} == "main" ]]; then
 		pp src/loop/main.pp >> output/main.conf
