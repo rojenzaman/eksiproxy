@@ -19,3 +19,8 @@ jobs:
 
     - name: Run generate
       run: make generate
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: eksi-nginx-proxy
+        path: output/

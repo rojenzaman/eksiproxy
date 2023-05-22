@@ -5,8 +5,7 @@
  - https://eksi.rojen.uk
  - https://eksiseyler.rojen.uk
  - https://cdneksi.rojen.uk, https://seylerekstat.rojen.uk, https://imgekstat.rojen.uk, https://ekstat.rojen.uk
- - Yukarıdaki proxyler için örnek NGINX dosyaları:
-   https://ftp.rojen.uk/eksiproxy
+ - Ekşi Sözlük için örnek NGINX proxy çıktısı: [eksi-nginx-proxy.zip](https://nightly.link/rojenzaman/eksiproxy/workflows/makefile/master/eksi-nginx-proxy.zip)
 
 
 ### GEREKSİNİMLER
