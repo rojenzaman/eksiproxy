@@ -1,6 +1,7 @@
 #!/bin/bash
 
-PP=https://adi.onl/pp/pp@1.0.11.tgz
+PP=https://github.com/rojenzaman/pp/archive/refs/tags/v1.0.11.tar.gz
+PP_SOURCE=pp-1.0.11
 
 usage() {
 	echo "Usage: ${BASH_SOURCE[0]} -d <working directory>"
@@ -29,5 +30,5 @@ if [[ "${iflag}" == "true" ]]; then
 	mkdir -p "${working_directory}"
 	wget -O "${working_directory}/pp.tar.gz" "${PP}"
 	tar xzvf "${working_directory}/pp.tar.gz" --directory "${working_directory}"
-	make -C "${working_directory}/pp" install
+	make -C "${working_directory}/${PP_SOURCE}" install
 fi
