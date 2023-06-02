@@ -1,4 +1,4 @@
-export DOMAIN=eksi.localdomain
+export DOMAIN=localhost.localdomain
 export NGINX_DIR=/etc/nginx/${DOMAIN}
 
 export PROXY_BIND=0.0.0.0
