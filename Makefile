@@ -4,10 +4,10 @@ generate: /usr/local/bin/pp clean
 	bin/build.sh
 
 install-pp /usr/local/bin/pp:
-	lib/install-pp.sh -d lib/objs -i
+	bin/install-pp.sh -d lib/objs -i
 
 uninstall-pp:
-	lib/install-pp.sh -d lib/objs -r
+	bin/install-pp.sh -d lib/objs -r
 
 clean:
 	rm -rf output/*.conf etc/tmp
