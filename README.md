@@ -27,7 +27,7 @@ sudo make ssl
  - PP programını indir:
 
 ```bash
-sudo make /usr/local/bin/pp
+make lib/pp
 ```
 
  - NGINX dosyalarını yarat:

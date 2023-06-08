@@ -1,3 +1,4 @@
 output/*.conf
 lib/objs
+lib/pp
 etc/tmp

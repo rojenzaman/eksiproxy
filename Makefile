@@ -1,9 +1,9 @@
 .PHONY: /etc/hosts
 
-generate: /usr/local/bin/pp clean
+generate: lib/pp clean
 	bin/build.sh
 
-install-pp /usr/local/bin/pp:
+install-pp lib/pp:
 	bin/install-pp.sh -d lib/objs -i
 
 uninstall-pp:
