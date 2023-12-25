@@ -79,7 +79,7 @@ Bunun için **etc/env.sh**, **etc/config.conf** dosyalarına dokunman yeterli.
 HEDEF SUNUCU            PROXY                   SERVİS TİPİ  ROBOTS    frame-ancestors
 
 cdn.eksisozluk1923.com  cdneksi.${DOMAIN}       service      disallow
-eksisozluk1923.com      eksi.${DOMAIN}          main         disallow
+eksisozluk111.com       eksi.${DOMAIN}          main         disallow
 seyler.ekstat.com       seylerekstat.${DOMAIN}  service      disallow
 img.ekstat.com          imgekstat.${DOMAIN}     service      disallow
 ekstat.com              ekstat.${DOMAIN}        service      disallow
